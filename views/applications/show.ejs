@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title><%= applications.title %></title>
+    <link rel="stylesheet" href="/stylesheets/style.css" />
+  </head>
+  <body>
+    <%- include('../partials/navbar.ejs') %>
+    <h1><%= applications.title %> at <%= applications.company %></h1>
+    <% if (applications.notes) { %>
+    <p>Notes: <%= applications.notes %></p>
+    <% } %> <% if (applications.postingLink) { %>
+    <a href="<%= applications.postingLink %>">View job posting</a>
+    <% } %>
+    <p>Current Status: <%= applications.status %></p>
+    <!-- We'll use method-override to allow us to hit a delete route: -->
+    <!-- <form
+      action="/users/<%= user._id %>/applications/<%= applications._id %>?_method=DELETE"
+      method="POST"
+    >
+      <button type="submit">Delete this application</button>
+    </form> -->
+    <a href="/users/<%= user._id%>/applications/<%= applications._id %>/edit"
+      >Edit Application</a
+    >
+    <!-- We'll use method-override to allow us to hit a delete route: -->
+    <form
+      action="/users/<%= user._id %>/applications/<%= applications._id %>?_method=DELETE"
+      method="POST"
+    >
+      <button type="submit">Delete this application</button>
+    </form>
+  </body>
+</html>

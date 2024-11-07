@@ -1,0 +1,24 @@
+<!-- views/auth/sign-up.ejs -->
+ <link rel="stylesheet" href="/stylesheets/style.css" />
+<body>
+  <%- include('../partials/navbar.ejs') %>
+
+  <div class="signup-container">
+    <h1>Create a new account!</h1>
+    <form action="/auth/sign-up" method="POST">
+      <label for="username">Username:</label>
+      <input type="text" name="username" id="username" />
+      <br />
+      <br />
+      <label for="password">Password:</label>
+      <input type="password" name="password" id="password" />
+      <br />
+      <br />
+      <label for="confirmPassword">Confirm Password:</label>
+      <input type="password" name="confirmPassword" id="confirmPassword" />
+      <br />
+      <br />
+      <button type="submit">Sign up</button>
+    </form>
+  </div>
+</body>
