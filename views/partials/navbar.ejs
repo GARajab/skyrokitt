@@ -1,4 +1,6 @@
 <!-- views/partials/_navbar.ejs -->
+<link rel="stylesheet" href="/stylesheets/partials.css" />
+<!-- views/partials/_navbar.ejs -->
 
 <nav>
   <% if(user) { %>
@@ -11,7 +13,7 @@
   </div>
   <% } else { %>
   <div class="navbar">
-    <h1 id="nav-header">Skyrockit</h1>
+    <h1 id="nav-header"><a href="/">Skyrockdddit</a></h1>
     <div class="nav-links">
       <a class="authlink" href="/auth/sign-in">Sign In</a>
       <a class="authlink" href="/auth/sign-up">Sign Up</a>
